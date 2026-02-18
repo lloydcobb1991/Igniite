@@ -1,0 +1,54 @@
+// Source - https://stackoverflow.com/a/79228911
+// Posted by Abhi Bhavsar, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-02-18, License - CC BY-SA 4.0
+
+const footerLogoStyles = `
+  .footer-logo-dark {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .footer-logo-dark {
+      display: inline !important;
+    }
+    .footer-logo-light {
+      display: none !important;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    .footer-logo-dark {
+      display: none !important;
+    }
+    .footer-logo-light {
+      display: inline !important;
+    }
+  }
+`;
+
+// index.jsx
+{/* FOOTER */}
+          <Section style={footerSection}>
+            <Section style={footerLogoSection}>
+              {/* Light Mode Logo */}
+              <a href="https://facebook.com">
+                <Img
+                  src={lightModeLogo}
+                  className="footer-logo-light"
+                  width="100"
+                  alt={companyLogoAlt}
+                  style={footerLogo}
+                />
+              </a>
+              {/* Dark Mode Logo */}
+              <a href="https://google.com">
+                <Img
+                  src={darkModeLogo}
+                  className="footer-logo-dark"
+                  width="100"
+                  alt={companyLogoAlt}
+                  style={footerLogo}
+                />
+              </a>
+            </Section>
+          </Section>
